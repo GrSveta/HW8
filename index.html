@@ -1,0 +1,221 @@
+<htnml>
+<script>
+//Array.prototype[@@iterator]()
+let arr = ['1', 'y', '42', 'o', '777'];
+for (let val of arr) {
+  console.log(val);
+}
+
+// Array.prototype.at()
+const a = [5, 12, 8, 130, 44];
+let index = 4;
+console.log(`${a.at(index)}`);
+-------------------------------------------------------------
+const cart = ['one', 'two', 'three'];
+//function returnLast(a) {
+//  return a.at(-1);
+//}
+const item1 = returnLast(cart);
+console.log(item1); 
+cart.push('four');
+const item2 = returnLast(cart);
+console.log(item2); 
+
+// Array.prototype.concat() 
+const a = ['1', '2', '3'];
+const b = ['y', 'e', 's'];
+const c = a.concat(b);
+console.log(c);
+
+//Array.prototype.copyWithin()  
+const a = ['1', '2', '3', '4', '5'];
+console.log(a.copyWithin(0, 2, 3));
+
+const a = ['1', '2', '3', '4', '5'];
+console.log(a.copyWithin(2, 3));
+
+//Array.prototype.entries()
+const arr = ['x', 'y', 'z','r','t'];
+const numb = arr.entries();
+
+console.log(numb.next().value);
+console.log(numb.next().value);
+console.log(numb.next().value);
+console.log(numb.next().value);
+console.log(numb.next().value);
+
+---------------------------------------------------
+let arr = ['a', 'b', 'c'];
+let nArr = arr.entries();
+
+for (let e of nArr) {
+  console.log(e);
+}
+
+//Array.prototype.every()   
+const lower = (currentValue) => currentValue < 10;
+const arr = [1,2,3,4,5,6,7,8,9];
+console.log(arr.every(lower));
+
+
+//Array.prototype.fill() 
+const array1 = [1, 2, 3, 4];
+console.log(array1.fill('a', 2, 4));
+console.log(array1.fill('b', 1));
+console.log(array1.fill('c'));
+
+//Array.prototype.filter() 
+const numeral = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth'];
+const result = numeral.filter(numeral => numeral.length > 5);
+console.log(result);
+
+--------------------------------------------------------
+
+const numb = [2,10,15,12,3,16,6];
+const result = numb.filter(numb => numb < 10);
+console.log(result);
+
+//Array.prototype.find() 
+const arr = ['a','bb','ccc','dd'];
+const found = arr.find(element => element.length > 1);
+console.log(found);
+
+//Array.prototype.findIndex()  
+const arr = [4, 24, 7, 29, 31];
+const result = (element) => element > 30;
+console.log(arr.findIndex(result));
+
+//Array.prototype.flat()  
+const arr = [0, 1, 2, [5,6,[7]]];
+console.log(arr.flat(1));
+// [0, 1, 2, 5, 6, [7]]
+
+//Array.prototype.flatMap()   
+let arr = [3,7,0,4];
+console.log(arr.flatMap(x => [x * 0.5]));
+
+//Array.prototype.forEach() 
+const arr = [2,5,7,8];
+arr.forEach(element => console.log((element*3-2)*0.5));
+
+//Array.from()  
+console.log(Array.from('Hello world!'));
+
+------------------------------------------
+console.log(Array.from(['a','b','c'], x => x+2));
+//["a2", "b2", "c2"]
+
+-------------------------------------------
+console.log(Array.from(['a','b','c'], x => x-2));
+//[NaN, NaN, NaN]
+
+--------------------------------------------
+console.log(Array.from([1,2,3], x => x-2));
+
+//Array.prototype.includes()   
+const a = [3,5,7,9,34,5];
+console.log(a.includes(34));
+
+-------------------------------------
+const a = [3,5,7,9,'fruit',5];
+console.log(a.includes('fruit'));
+
+--------------------------------------
+const a = [3,5,7,9,5];
+console.log(a.includes('fruit'));
+
+//Array.prototype.indexOf()  
+const a = [3,5,7,9,34,7];
+console.log(a.indexOf(7));
+
+//Array.isArray()  
+console.log(Array.isArray(['a','b','123'])); 
+
+
+//Array.prototype.join()         
+const elements = [2,5,8];
+console.log(elements.join('*'));
+
+--------------------------------------------
+const elements = ['one', 'two', 'three'];
+console.log(elements.join());
+
+//Array.prototype.keys() 
+const arr = [5,8,6,7];
+const iterator = arr.keys();
+for (const key of iterator) {
+  console.log(key);
+}
+
+//Array.prototype.lastIndexOf() 
+const numb = [4,9,8,2,3,9,0,6];
+console.log(numb.lastIndexOf(9));
+
+//Array.prototype.map()   
+let arr = [3,7,0,4];
+const m1 = arr.map(x => x * 0.5));
+console.log(m1);
+//[1.5, 3.5, 0, 2]
+
+------------------------------------------------
+let arr = [3,7,0,4];
+const m1 = arr.map(x => [x * 0.5]);
+console.log(m1);
+[[1.5], [3.5], [0], [2]]
+
+
+//Array.of()  
+console.log(Array.of('a','b','c'));
+
+//Array.prototype.pop() 
+const numb = [1,8,7,5,7,3,4];
+console.log(numb.pop())
+
+//Array.prototype.push() 
+const a = [1,2,3,4];
+const x = a.push(6,8,11);
+console.log(x);
+
+//Array.prototype.reduce()
+const arr = [2,4,6,8];
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
+console.log(arr.reduce(reducer));
+console.log(arr.reduce(reducer, 7));
+
+
+//Array.prototype.reduceRight()  
+const arr = [0,1,2,3];
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
+console.log(arr.reduceRight(function(previousValue, currentValue) { return previousValue + currentValue;
+}));
+
+//Array.prototype.reverse() 
+const first = [10,20,30,40,50];
+console.log('first:', first);
+const reversed = array1.reverse();
+console.log('reversed:', reversed); 
+console.log('first:', first)
+
+//Array.prototype.shift() 
+const first = [10,20,30,40,50];
+const x = first.shift()
+console.log(x)
+
+//Array.prototype.slice()  
+const counts = ['first', 'second', 'third', 'four', 'fifth'];
+console.log(counts.slice(2)); 
+console.log(counts.slice(2, 4));
+console.log(counts.slice(2, -1)); 
+
+//Array.prototype.some()  
+const arr = [1, 2, 3, 4, 5];
+const x = (element) => element * 3 > 16;
+console.log(arr.some(x));
+
+
+//Array.prototype.splice() 
+let myFish = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'];
+let removed = myFish.splice(2, 3); 
+console.log(removed)
+</script>
+</html>
